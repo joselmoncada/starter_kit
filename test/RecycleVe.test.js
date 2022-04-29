@@ -1,5 +1,10 @@
 const RecycleVe = artifacts.require("./RecycleVe.sol");
 
+require('chai')
+  .use(require('chai-as-promised'))
+  .should()
+
+
 contract('RecycleVe', (accounts)=>{
     let recycleVe;
 
@@ -44,9 +49,10 @@ contract('RecycleVe', (accounts)=>{
         it('creates a waste unit', async()=>{
          //success
          assert.equal(wasteUnitsCount,1);
+         console.log(result.logs);
         })
 
-        console.log(result.log);
+      
        
     })
 
